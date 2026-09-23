@@ -1,0 +1,7 @@
+# Working files not used by the site
+assets/img/storefront/p-*.png
+assets/img/wireframe-1.png
+assets/img/podcast-poster.jpg
+assets/video/podcast-ubud.mp4
+desktop.ini
+.DS_Store
