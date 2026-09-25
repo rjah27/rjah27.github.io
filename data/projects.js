@@ -6,7 +6,7 @@
    unique `id`, and fill in the fields.
 
    category: "ux" | "web" | "software" | "media"
-   featured: true  -> shows on the home page (keep it to 3)
+   featured: true  -> shows on the home page
 
    Lines marked  TODO(Jah)  are spots where only you know the
    details. Fill them in with your own words when you can.
