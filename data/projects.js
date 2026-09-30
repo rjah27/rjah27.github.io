@@ -7,9 +7,6 @@
 
    category: "ux" | "web" | "software" | "media"
    featured: true  -> shows on the home page
-
-   Lines marked  TODO(Jah)  are spots where only you know the
-   details. Fill them in with your own words when you can.
    ========================================================= */
 window.PROJECTS = [
   {
