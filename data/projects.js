@@ -222,6 +222,8 @@ window.PROJECTS = [
     tools: ["Java", "Swing", "MVC architecture", "Collections (Map, Set, Iterator)"],
     thumb: "",
     summary: "A desktop app that reads a file of ranked ballots and counts them round by round, following Maine's ranked-choice voting law, until there's a winner.",
+    // TODO(Jah): once the code is on GitHub, remove the // below so a "View the code" button appears
+    links: [ { label: "View the code on GitHub", href: "https://github.com/rjah27/rcv-simulator" } ],
     sections: [
       {
         heading: "Overview",
@@ -235,6 +237,26 @@ window.PROJECTS = [
                  <li><strong>Controller:</strong> <code>RCVController</code> connects button clicks to the model.</li>
                </ul>
                <p>Ties for last place are handled on purpose: tied candidates are shuffled and one is picked to be eliminated, so the program always makes progress.</p>`
+      },
+      {
+        heading: "A look at the code",
+        html: `<p>The trickiest rule is what happens when several candidates are tied for last place. This method from <code>RCVSimulator</code> finds everyone with the fewest votes and randomly picks one to eliminate, so every round always removes exactly one candidate:</p>
+               <pre class="code-block"><code>// Find everyone tied for last place, then pick one at random to eliminate
+private char chooseCandidateElim() {
+    int minVotes = Integer.MAX_VALUE;
+    for (int vote : voteMap.values()) {
+        minVotes = Math.min(minVotes, vote);
+    }
+    List&lt;Character&gt; tiedForLast = new ArrayList&lt;&gt;();
+    for (Map.Entry&lt;Character, Integer&gt; elim : voteMap.entrySet()) {
+        if (elim.getValue() == minVotes) {
+            tiedForLast.add(elim.getKey());
+        }
+    }
+    Collections.shuffle(tiedForLast);
+    Iterator&lt;Character&gt; iterator = tiedForLast.iterator();
+    return iterator.hasNext() ? iterator.next() : ' ';
+}</code></pre>`
       },
       {
         heading: "Iteration",
