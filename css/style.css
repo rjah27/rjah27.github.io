@@ -97,22 +97,31 @@ p { margin: 0 0 1em; }
 .hero .btn-row { margin-top: 28px; }
 .hero-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 28px; color: #c3d4ea; font-size: .95rem; padding: 0; list-style: none; }
 
-/* CARDS */
-.grid { display: grid; gap: 24px; }
+/* CARDS
+   Flat, editorial style: no shadow, no rounded corners, no box.
+   The screenshot sits in a thin frame, a navy rule separates it
+   from the text, and the tools read as a plain list. */
+.grid { display: grid; gap: 48px 36px; }
 .grid-3 { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-.card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow); transition: background-color .15s, border-color .15s, box-shadow .15s, filter .15s; }
-.card:hover { background: #f7f9fc; border-color: #c8d3df; filter: brightness(.98); box-shadow: var(--shadow); }
-.card-media { aspect-ratio: 16 / 10; background: var(--sky-soft); overflow: hidden; border-bottom: 1px solid var(--line); }
-.card-media img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-.card-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
-.card-body h3 { margin-bottom: .35em; }
+.card { position: relative; display: flex; flex-direction: column; background: transparent; }
+.card-media { aspect-ratio: 16 / 10; background: var(--sky-soft); overflow: hidden; border: 1px solid var(--line); transition: border-color .15s; }
+.card-media img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: opacity .15s; }
+.card-body { display: flex; flex-direction: column; flex: 1; padding: 16px 0 0; margin-top: 16px; border-top: 3px solid var(--navy); }
+.card-meta { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); margin-bottom: .5em; }
+.card-body h3 { margin-bottom: .4em; font-size: 1.25rem; }
 .card-body h3 a { color: var(--navy); text-decoration: none; }
 .card-body h3 a::after { content: ""; position: absolute; inset: 0; }
-.card { position: relative; }
 .card-body p { color: var(--muted); font-size: .98rem; }
-.card-meta { font-size: .85rem; color: var(--muted); margin-bottom: .6em; }
-.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding: 0; list-style: none; }
-.tag { font-size: .78rem; font-weight: 600; color: var(--blue); background: var(--sky-soft); padding: 3px 9px; border-radius: 999px; }
+.tags { display: flex; flex-wrap: wrap; margin-top: auto; padding: 12px 0 0; list-style: none; border-top: 1px solid var(--line); }
+.tag { font-size: .85rem; color: var(--muted); }
+.tag:not(:last-child)::after { content: "/"; margin: 0 .5em; color: var(--sky); }
+
+/* Hover + keyboard focus: frame turns navy, title underlines */
+.card:hover .card-media, .card:focus-within .card-media { border-color: var(--navy); }
+.card:hover .card-media img { opacity: .92; }
+.card:hover h3 a, .card:focus-within h3 a { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.card-body h3 a:focus-visible { outline: none; }
+.card:focus-within { outline: 3px solid var(--accent); outline-offset: 6px; }
 
 /* FILTERS */
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 32px; }

@@ -5,7 +5,7 @@
   const PROJECTS = window.PROJECTS || [];
   const CATEGORIES = window.CATEGORIES || {};
 
-  /* ---------- Mobile nav ---------- */
+  /* Mobile Navigation */
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.getElementById("site-nav");
   if (toggle && nav) {
@@ -15,16 +15,16 @@
     });
   }
 
-  /* ---------- Footer year ---------- */
+  /* Footer */
   document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 
-  /* ---------- Helpers ---------- */
+  /* helpers */
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
   function placeholder(p) {
     // Styled tile for projects without a screenshot
     const initials = p.title.split(/\s+/).filter(w => /^[A-Za-z]/.test(w)).slice(0, 2).map(w => w[0]).join("");
-    return `<div class="card-media" aria-hidden="true" style="display:grid;place-items:center;background:linear-gradient(135deg,var(--navy),var(--blue));">
+    return `<div class="card-media" aria-hidden="true" style="display:grid;place-items:center;background:var(--navy);">
               <span style="font-family:var(--font-head);font-size:3rem;font-weight:700;color:var(--sky);letter-spacing:.04em">${esc(initials)}</span>
             </div>`;
   }
@@ -45,13 +45,13 @@
             </article>`;
   }
 
-  /* ---------- Home: featured ---------- */
+  /* Home: Featured */
   const featured = document.getElementById("featured-grid");
   if (featured) {
     featured.innerHTML = PROJECTS.filter((p) => p.featured).slice(0, 3).map(card).join("");
   }
 
-  /* ---------- Work page: grid + filters ---------- */
+  /* Work page: grid + filters */
   const workGrid = document.getElementById("work-grid");
   const filterBar = document.getElementById("filters");
   if (workGrid) {
@@ -85,7 +85,7 @@
     }
   }
 
-  /* ---------- Case study page ---------- */
+  /* Case Study */
   const cs = document.getElementById("case-study");
   if (cs) {
     const id = new URLSearchParams(location.search).get("id");
