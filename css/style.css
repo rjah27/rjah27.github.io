@@ -179,8 +179,7 @@ p { margin: 0 0 1em; }
 .timeline li { position: relative; padding: 0 0 24px 22px; }
 .timeline li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--blue); border: 2px solid #fff; }
 .timeline .when { font-size: .85rem; color: var(--muted); }
-.side-card { background: var(--bg-alt); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin-bottom: 20px; transition: background-color .15s, border-color .15s, box-shadow .15s, filter .15s; }
-.side-card:hover { background: #eef3f9; border-color: #c8d3df; filter: brightness(.98); box-shadow: var(--shadow); }
+.side-card { background: var(--bg-alt); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin-bottom: 20px; }
 .side-card h3 { font-size: 1.05rem; }
 .side-card ul { margin: 0; padding-left: 1.1em; }
 
