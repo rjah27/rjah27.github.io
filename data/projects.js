@@ -223,7 +223,6 @@ window.PROJECTS = [
     thumb: "",
     summary: "A desktop app that reads a file of ranked ballots and counts them round by round, following Maine's ranked-choice voting law, until there's a winner.",
     // TODO(Jah): once the code is on GitHub, remove the // below so a "View the code" button appears
-    links: [ { label: "View the code on GitHub", href: "https://github.com/rjah27/rcv-simulator" } ],
     sections: [
       {
         heading: "Overview",
