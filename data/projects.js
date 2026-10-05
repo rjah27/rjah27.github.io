@@ -266,40 +266,11 @@ private char chooseCandidateElim() {
     ]
   },
 
-  {
-    id: "ubud-podcast",
-    title: "Jalan Raya, the Heart of Ubud",
-    subtitle: "A narrative profile podcast with recorded voiceover and layered ambient sound",
-    category: "media",
-    featured: false,
-    course: "ENGL 15 · Rhetoric & Composition",
-    date: "Feb 2024",
-    role: "Writer, narrator & editor",
-    tools: ["Adobe Premiere Rush", "Premiere Pro", "Voiceover recording", "Sound design"],
-    thumb: "",
-    summary: "An audio profile of the central market town of Ubud, Bali, based on my own trip. I scripted, narrated, and edited it with ambient sound and music.",
-    sections: [
-      {
-        heading: "Overview",
-        html: `<p>This podcast profiles Jalan Raya, the central market street of Ubud, Bali, based on my own time there. It moves between the busy markets and the quiet rice fields, and it pushes back on a common assumption that poverty defines life in towns like Ubud.</p>`
-      },
-      {
-        heading: "Listen",
-        html: `<div class="audio-card"><h3 style="color:#fff">Jalan Raya, the Heart of Ubud</h3><p>Profile podcast · about 7 minutes</p><audio controls preload="none" src="assets/video/podcast-ubud.mp3">Your browser does not support embedded audio.</audio></div>`
-      },
-      {
-        heading: "Production",
-        html: `<p>I recorded 15 separate voiceover takes and edited them in Adobe Premiere Rush, layering in sound effects (crowds, wind, jungle, an airliner) and traditional Balinese dance music to put the listener in the scene. Before recording, I wrote a full rough-draft script with notes on where each sound would go.</p>
-               <p class="muted">I also edit my own fitness videos in Premiere Pro, such as a channel intro, training-day videos, and "full day of eating" videos.</p>`
-      }
-    ]
-  }
 ];
 
 /* Categories shown as filter buttons on the Work page */
 window.CATEGORIES = {
   ux: "UX & Content",
   web: "Web Development",
-  software: "Software",
-  media: "Media"
+  software: "Software"
 };
